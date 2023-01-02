@@ -21,9 +21,6 @@ jobs:
       - shell: bash
         run: >
           tree .
-      - shell: bash
-        run: >
-          find .
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
@@ -31,4 +28,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Package
-          path: build/libs
+          path: ./app/build/libs
+      - shell: bash
+        run: >
+          find .
