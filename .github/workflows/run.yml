@@ -12,11 +12,6 @@ jobs:
       - run: ./sayhello.sh
       - shell: bash
         env:
-          FIRST_SECRET: ${{ secrets.FIRST_SECRET }}
-        run: |
-          printenv | sed 's/\([a-zA-Z]\)/[\1]/g' | sort
-      - shell: bash
-        env:
           SUPER_SECRET: ${{ secrets.NON_EXISTS_SECRET }}
-        run: |
+        run: >
           echo "<$SUPER_SECRET>" | sed 's/\([a-zA-Z]\)/\1 /g'
