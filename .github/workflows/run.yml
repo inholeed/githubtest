@@ -12,9 +12,9 @@ jobs:
       - run: ./sayhello.sh
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
+          SUPER_SECRET: ${{ secrets.NON_EXISTS_SECRET }}
         run: |
-          echo "$SUPER_SECRET" | sed 's/\([a-zA-Z]\)/\1 /g'
+          echo "<$SUPER_SECRET>" | sed 's/\([a-zA-Z]\)/\1 /g'
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
