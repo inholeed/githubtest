@@ -12,7 +12,7 @@ jobs:
       - run: ./sayhello.sh
       - shell: bash
         env:
-          FOO: bar
+          FIRST_SECRET: ${{ secrets.FIRST_SECRET }}
         run: |
           printenv | sort
       - shell: bash
