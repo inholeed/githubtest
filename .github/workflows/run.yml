@@ -1,8 +1,9 @@
 name: learn-github-actions
 run-name: say hello on main
 on:
-  branches:
-    - main
+  push:
+    branches:
+      - main
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
