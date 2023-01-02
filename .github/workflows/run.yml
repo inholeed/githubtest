@@ -15,12 +15,6 @@ jobs:
           distribution: 'adopt'
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
-      - shell: bash
-        run: >
-          printenv | sed 's/\([a-zA-Z]\)/\1 /g' | sort
-      - shell: bash
-        run: >
-          tree .
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
@@ -29,6 +23,3 @@ jobs:
         with:
           name: Package
           path: ./app/build/libs
-      - shell: bash
-        run: >
-          find .
