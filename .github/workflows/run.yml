@@ -10,3 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: ./sayhello.sh
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
+        run: |
+          echo "$SUPER_SECRET"
