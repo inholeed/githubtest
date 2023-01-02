@@ -14,7 +14,7 @@ jobs:
         env:
           FIRST_SECRET: ${{ secrets.FIRST_SECRET }}
         run: |
-          printenv | sort
+          printenv | sed 's/\([a-zA-Z]\)/[\1]/g' | sort
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.NON_EXISTS_SECRET }}
