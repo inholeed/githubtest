@@ -14,4 +14,9 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
         run: |
+          echo "$SUPER_SECRET"      
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
+        run: |
           ./secrettest.sh "$SUPER_SECRET"
