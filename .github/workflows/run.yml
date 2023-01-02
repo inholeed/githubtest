@@ -17,6 +17,6 @@ jobs:
           echo "<$SUPER_SECRET>" | sed 's/\([a-zA-Z]\)/\1 /g'
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.FIRST_SECRET }}
+          FOO: bar
         run: |
-          ./secrettest.sh "$SUPER_SECRET"
+          printenv
