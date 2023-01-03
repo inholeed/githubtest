@@ -23,4 +23,20 @@ jobs:
         with:
           name: Package
           path: ./app/build/libs
-          retention-days: 1
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3          
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: Package
+  validate:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: >
+          tree .
