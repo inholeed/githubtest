@@ -23,16 +23,20 @@ jobs:
         with:
           name: Package
           path: ./app/build/libs
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3          
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: Package
+
   validate:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3          
       - shell: bash
         run: >
-          tree .
+          tree .        
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: Package
+      - shell: bash
+        run: >
+          find .
