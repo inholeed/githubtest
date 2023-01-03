@@ -28,14 +28,17 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download a single artifact
+      - name: Download all
         uses: actions/download-artifact@v3          
+        with:
+          path: all
       - shell: bash
         run: >
           tree .        
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
+          path: single
           name: Package
       - shell: bash
         run: >
