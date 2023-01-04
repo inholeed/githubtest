@@ -1,7 +1,7 @@
 name: Java CI
 
 on:
-  deployment
+  registry_package
 
 jobs:
   build:
