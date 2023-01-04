@@ -4,19 +4,12 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
       - shell: bash
         run: |
-          echo foo
-          echo bar
-      - shell: bash
-        run: >
-          echo hello
-          echo world
-      - shell: bash
-        run: >
-          echo git >
-          echo hub
+          echo ${{ matrix.version }}
+          echo ${{ matrix.os }}
