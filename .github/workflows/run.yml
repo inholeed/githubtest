@@ -8,5 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
+        with:
+          foo: bar
+          bar: world
         run: |
-          echo deployed
+          echo foo
+          echo $foo
+          echo ${foo}
